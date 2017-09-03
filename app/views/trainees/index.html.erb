@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1> All Trainees </h1>
+		<ul>
+			<% @trainees.each do |t| %>
+			<%= render 'trainee_list_item', t: t %>
+			<%end%>
+		</ul>
+		<%= link_to 'Home', root_path %>
+	</body>
+</html>

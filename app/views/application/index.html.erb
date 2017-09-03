@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+  </head>
+  <body>
+    <h1> Currently tracked trainees </h1>
+    <ul>
+      <% @tracked_trainees.each do |t| %>
+        <%= render 'trainees/trainee_list_item', t: t %>
+      <%end%>
+    </ul>
+    <%= link_to 'All Trainees', trainees_path %>
+  </body>
+</html>

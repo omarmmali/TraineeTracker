@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>trainee tracking app</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+  <div id="flash">
+      <% flash.each do |key, value| %>
+        <%= tag.div value, class: "flash #{key}" %>
+      <% end %>
+    </div>
+</html>
