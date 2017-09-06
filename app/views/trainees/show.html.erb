@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1> <%= @trainee.name.capitalize %>  </h1>
+    <h2> UVa Handle: <%= @trainee.uva_handle %> </h2>
+    <h2> Live Archive Handle: <%= @trainee.live_archive_handle %> </h2>
+    <h2> Codeforces Handle: <%= @trainee.codeforces_handle %> </h2>
+    <h2> SPOJ Handle: <%= @trainee.spoj_handle %> </h2>
+    <h2> TIMUS Handle: <%= @trainee.timus_handle %> </h2>
+    <h2> URI Handle: <%= @trainee.uri_handle %> </h2>
+    <h2> CodeChef Handle: <%= @trainee.codechef_handle %> </h2>
+    <h2> Tracked Verdicts: </h2>
+    <ul>
+      <li> Submission Error: <%= @trainee.tracked_verdict.submission_error %> </li>
+      <li> Can't Be Judged <%= @trainee.tracked_verdict.cant_be_judged %> </li>
+      <li> In Queue: <%= @trainee.tracked_verdict.in_queue %> </li>
+      <li> Compile Error: <%= @trainee.tracked_verdict.compile_error %> </li>
+      <li> Restricted Function: <%= @trainee.tracked_verdict.restricted_function %> </li>
+      <li> Runtime Error: <%= @trainee.tracked_verdict.runtime_error %> </li>
+      <li> Output Limit: <%= @trainee.tracked_verdict.output_limit %> </li>
+      <li> Time Limit: <%= @trainee.tracked_verdict.time_limit %> </li>
+      <li> Memory Limit: <%= @trainee.tracked_verdict.memory_limit %> </li>
+      <li> Wrong Answer: <%= @trainee.tracked_verdict.wrong_answer %> </li>
+      <li> Presentation Error: <%= @trainee.tracked_verdict.presentation_error %> </li>
+      <li> Accepted: <%= @trainee.tracked_verdict.accepted %> </li>
+    </ul>
+  </body>
+  <%= link_to 'Home', root_path %>
+  <%= link_to 'All Trainees', trainees_path %>
+</html>

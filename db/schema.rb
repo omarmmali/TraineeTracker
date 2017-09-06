@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903064935) do
+ActiveRecord::Schema.define(version: 20170906152120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(version: 20170903064935) do
     t.datetime "updated_at", null: false
     t.integer "tracking_status", default: 0
     t.string "name"
+    t.string "spoj_handle"
+    t.string "timus_handle"
+    t.string "uri_handle"
+    t.string "codechef_handle"
   end
 
 end

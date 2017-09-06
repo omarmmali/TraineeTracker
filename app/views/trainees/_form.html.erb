@@ -1,4 +1,4 @@
-<%= form_for(@trainee) do |f| %>
+<%= form_for @trainee do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
 <%= f.label :uva_handle %>
@@ -7,3 +7,41 @@
 <%= f.text_field :live_archive_handle %>
 <%= f.label :codeforces_handle %>
 <%= f.text_field :codeforces_handle %>
+<%= f.label :spoj_handle %>
+<%= f.text_field :spoj_handle %>
+<%= f.label :timus_handle %>
+<%= f.text_field :timus_handle %>
+<%= f.label :uri_handle %>
+<%= f.text_field :uri_handle %>
+<%= f.label :codechef_handle %>
+<%= f.text_field :codechef_handle %>
+<%= f.fields_for :tracked_verdict_attributes do |v_f| %>
+  <%= v_f.label 'Accepted' %>
+  <%= v_f.check_box :accepted %>
+  <%= v_f.label 'Presentation Error' %>
+  <%= v_f.check_box :presentation_error %>
+  <%= v_f.label 'Wrong Answer' %>
+  <%= v_f.check_box :wrong_answer %>
+  <%= v_f.label 'Memory Limit' %>
+  <%= v_f.check_box :memory_limit %>
+  <%= v_f.label 'Time Limit' %>
+  <%= v_f.check_box :time_limit %>
+  <%= v_f.label 'Output Limit' %>
+  <%= v_f.check_box :output_limit %>
+  <%= v_f.label 'Runtime Error' %>
+  <%= v_f.check_box :runtime_error %>
+  <%= v_f.label 'Restricted Function' %>
+  <%= v_f.check_box :restricted_function %> 
+  <%= v_f.label 'Compile Error' %>
+  <%= v_f.check_box :compile_error %>
+  <%= v_f.label 'In Queue' %>
+  <%= v_f.check_box :in_queue %>
+  <%= v_f.label "Can't Be Judged" %>
+  <%= v_f.check_box :cant_be_judged %>
+  <%= v_f.label 'Submission Error' %>
+  <%= v_f.check_box :submission_error %>
+<%end%>
+<div>
+ <%= f.submit 'Save changes' %>
+</div>
+<% end %>

@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :trainees do
     post 'toggle_tracking_status', to: 'trainees#toggle_tracking_status'
     resources :submissions
+    resources :tracked_verdict
   end
 end
