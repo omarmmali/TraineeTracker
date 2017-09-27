@@ -1,0 +1,35 @@
+<DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1><%=@trainee.name%>'s Submissions</h1>
+      <%= render 'stats', submissions: @submissions %>
+      <%= form_tag '', method: :get do %>
+        <%= label_tag 'From: ' %>
+        <%= date_field :date, :from_date %>
+        <%= label_tag 'To: ' %>
+        <%= date_field :date, :to_date %>
+        <%= submit_tag 'Filter' %>
+      <% end %>
+      <table>
+        <tr> 
+          <th>Judge</th> 
+          <th>Problem ID</th> 
+          <th>Verdict</th> 
+          <th>Date</th> 
+        </tr>
+        <% @submissions.each do |s| %>
+          <tr> 
+            <td> <%= s.problem_judge %> </td>
+            <td> <%= s.problem_id %> </td>
+            <td> <%= s.verdict %> </td>
+            <td> <%= s.created_at %> </td>
+          </tr>
+        <% end %>
+      </table>
+      <%= link_to 'All Trainees', trainees_path %>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Back', trainee_path(@trainee) %>
+  </body>
+</html>

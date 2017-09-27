@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+      <ul>
+        <li>Total Accepted:  <%= submissions.select { |s| s.accepted? }.count %> </li>
+        <li>Total Wrong Answer:  <%= submissions.select { |s| s.wrong_answer? }.count %> </li>
+        <li>Total Time Limit Exceeded:  <%= submissions.select { |s| s.time_limit? }.count %> </li>
+        <li>Total Memory Limit Exceeded:  <%= submissions.select { |s| s.memory_limit? }.count %> </li>
+        <li>Total Runtime Error:  <%= submissions.select { |s| s.runtime_error? }.count %> </li>
+        <li>Total Compile Error:  <%= submissions.select { |s| s.compile_error? }.count %> </li>
+      </ul>
+</html>

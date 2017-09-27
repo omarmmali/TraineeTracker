@@ -1,3 +1,7 @@
 <li> <%= link_to t.name, trainee_path(t) %> 
 <%= link_to 'Toggle Tracking', trainee_toggle_tracking_status_path(t.id), method: :post %> 
-<%= link_to 'Edit Trainee', edit_trainee_path(t) %> </li>
+<%= link_to 'Edit Trainee', edit_trainee_path(t) %>
+<%= link_to "Trainee's Submissions In Past Day", trainee_submissions_path(t, date: {from_date: Time.now-24.hours, to_date: Time.now}) %> 
+</li>
+Accepted: <%= t.submissions.select { |s| s.accepted? }.count %>
+Rejected: <%= t.submissions.select { |s| !s.accepted? }.count %>
